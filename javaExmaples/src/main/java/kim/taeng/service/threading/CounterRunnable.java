@@ -5,8 +5,9 @@ import org.apache.log4j.Logger;
 public class CounterRunnable implements Runnable {
 
 	private static final Logger LOGGER = Logger.getLogger(CounterRunnable.class);
-	
+
 	private static int count = 0;
+
 	private int id;
 
 	public CounterRunnable() {
@@ -19,7 +20,7 @@ public class CounterRunnable implements Runnable {
 		for (int i = 0; i < 10; i++) {
 			LOGGER.info("Thread : " + id + " Count : " + i);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
