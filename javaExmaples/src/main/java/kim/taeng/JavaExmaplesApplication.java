@@ -6,7 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import kim.taeng.service.threading.ExcutorExampleService;
+import kim.taeng.service.threading.excutor.ExcutorExampleService;
+import kim.taeng.service.threading.producer_consumer.ProducerConsumerExampleService;
+import kim.taeng.service.threading.synchrronized.SynchronizedExampleService;
 
 @SpringBootApplication
 public class JavaExmaplesApplication implements CommandLineRunner {
@@ -15,6 +17,10 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 
 	@Autowired
 	ExcutorExampleService excutorExampleService;
+	@Autowired
+	SynchronizedExampleService synchronizedExampleService;
+	@Autowired
+	ProducerConsumerExampleService customQueueExampleService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavaExmaplesApplication.class, args);
@@ -24,7 +30,12 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		LOGGER.info("Main Thread Started");
 		// executor 를 통한 thread 생성자 - 소비자 예제
-		excutorExampleService.exmapleMain(2, 4);
+		// excutorExampleService.exmapleMain(2, 4);
+
+		// Syncronized example
+		// synchronizedExampleService.exmapleMain(2, 4);
+
+		customQueueExampleService.exampleMain();
 	}
 
 }

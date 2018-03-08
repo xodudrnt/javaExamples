@@ -1,15 +1,12 @@
-package kim.taeng.service.threading;
+package kim.taeng.service.threading.excutor;
 
 import org.apache.log4j.Logger;
 
 public class CounterRunnable implements Runnable {
 
 	private static final Logger LOGGER = Logger.getLogger(CounterRunnable.class);
-
 	private static int count = 0;
-
 	private int id;
-
 	public CounterRunnable() {
 		this.id = ++count;
 	}

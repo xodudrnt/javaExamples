@@ -1,4 +1,4 @@
-package kim.taeng.service.threading;
+package kim.taeng.service.threading.excutor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,13 +11,14 @@ public class ExcutorExampleService {
 	private static final Logger LOGGER = Logger.getLogger(ExcutorExampleService.class);
 
 	public void exmapleMain(int threadPoolMax, int threadMax) {
-		
-		LOGGER.info("ExcutorExampleService --> Thread Pool size : "+ threadPoolMax);
-		LOGGER.info("ExcutorExampleService --> Thread Pool size : "+ threadMax);
-		
+		LOGGER.info("ExcutorExampleService Started");
+		LOGGER.info("ExcutorExampleService --> Thread Pool size : " + threadPoolMax);
+		LOGGER.info("ExcutorExampleService --> Thread Pool size : " + threadMax);
+
 		ExecutorService executorService = Executors.newFixedThreadPool(threadPoolMax);
 		for (int i = 0; i < threadMax; i++)
 			executorService.execute(new CounterRunnable());
 		executorService.shutdown();
+		LOGGER.info("ExcutorExampleService Ended");
 	}
 }
