@@ -1,4 +1,4 @@
-package kim.taeng.service.threading;
+package kim.taeng.service.threading.join;
 
 import org.apache.log4j.Logger;
 

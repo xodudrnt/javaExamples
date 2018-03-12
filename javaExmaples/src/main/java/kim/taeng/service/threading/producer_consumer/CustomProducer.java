@@ -22,6 +22,7 @@ public class CustomProducer extends Thread {
 				Thread.sleep(1000);
 			}
 		} catch (InterruptedException e) {
+			
 //			e.printStackTrace();
 		} finally {
 			LOGGER.info("CustomProducer Ended");

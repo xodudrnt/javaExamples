@@ -54,10 +54,9 @@ public class CustomQueue implements CustomQueueImpl {
 				LOGGER.info("WAIT");
 				LOCK.wait();
 				LOGGER.info("WAIT END");
-				obj = jobs.removeFirst();
-			} else {
-				obj = jobs.removeFirst();
 			}
+			obj = jobs.removeFirst();
+		
 		}
 		if (obj == null)
 			throw new NoSuchElementException();
@@ -68,7 +67,6 @@ public class CustomQueue implements CustomQueueImpl {
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return jobs.size();
 	}
 

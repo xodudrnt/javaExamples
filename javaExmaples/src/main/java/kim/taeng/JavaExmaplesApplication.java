@@ -6,7 +6,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import kim.taeng.service.threading.countlatch.CountLatchExampleService;
 import kim.taeng.service.threading.excutor.ExcutorExampleService;
+import kim.taeng.service.threading.fork_join.ForkJoinExampleService;
+import kim.taeng.service.threading.future.FutureExampleService;
+import kim.taeng.service.threading.join.JoinExampleService;
 import kim.taeng.service.threading.producer_consumer.ProducerConsumerExampleService;
 import kim.taeng.service.threading.synchrronized.SynchronizedExampleService;
 
@@ -20,7 +24,15 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 	@Autowired
 	SynchronizedExampleService synchronizedExampleService;
 	@Autowired
-	ProducerConsumerExampleService customQueueExampleService;
+	ProducerConsumerExampleService producerConsumerExampleService;
+	@Autowired
+	ForkJoinExampleService forkJoinExampleService;
+	@Autowired
+	CountLatchExampleService countLatchExampleService;
+	@Autowired
+	JoinExampleService joinExampleService;
+	@Autowired
+	FutureExampleService futureExampleService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavaExmaplesApplication.class, args);
@@ -29,13 +41,27 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		LOGGER.info("Main Thread Started");
-		// executor 를 통한 thread 생성자 - 소비자 예제
+		/* executor 를 통한 thread 생성자 - 소비자 예제 */
 		// excutorExampleService.exmapleMain(2, 4);
 
-		// Syncronized example
+		/* Syncronized 예제 */
 		// synchronizedExampleService.exmapleMain(2, 4);
 
-		customQueueExampleService.exampleMain();
+		/* producerConsumer 예제 */
+		// producerConsumerExampleService.exampleMain();
+
+		/* JoinExampleService 예제 */
+		// joinExampleService.exmapleMain(2, 4);
+
+		/* Fork Join 예제 */
+		// forkJoinExampleService.recusiveActionExampleMain();
+		// forkJoinExampleService.recusiveTaskExampleMain();
+
+		/* Future + Excutor 예제 */
+		futureExampleService.futureExampleMain(10, 10);
+
+		LOGGER.info("Main Thread Ended");
+
 	}
 
 }

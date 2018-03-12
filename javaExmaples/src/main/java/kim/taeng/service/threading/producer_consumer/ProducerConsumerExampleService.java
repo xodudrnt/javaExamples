@@ -25,7 +25,7 @@ public class ProducerConsumerExampleService {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		LOGGER.info("producer 생성");
 		Thread producer1 = new Thread(new CustomProducer(cq));
@@ -39,10 +39,8 @@ public class ProducerConsumerExampleService {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
-
-		consumer.interrupt();
 
 		producer1.interrupt();
 		producer2.interrupt();
@@ -51,7 +49,7 @@ public class ProducerConsumerExampleService {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 
 		LOGGER.info("Thread 종료");
