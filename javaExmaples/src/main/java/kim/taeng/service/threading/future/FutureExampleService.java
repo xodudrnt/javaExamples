@@ -45,6 +45,7 @@ public class FutureExampleService {
 			String string = future.get().toString();
 			// LOGGER.info("Task Done : "+future.isDone());
 		}
+		
 		executor.shutdown();
 		LOGGER.info("FutureExample Ended");
 	}
