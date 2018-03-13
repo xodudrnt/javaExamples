@@ -1,4 +1,4 @@
-package kim.taeng.service.threading.countlatch;
+package kim.taeng.service.threading.countdownlatch;
 
 import java.util.Random;
 
