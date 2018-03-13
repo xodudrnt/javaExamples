@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import kim.taeng.service.chatServer.ServerExampleService;
 import kim.taeng.service.threading.countlatch.CountLatchExampleService;
 import kim.taeng.service.threading.excutor.ExcutorExampleService;
 import kim.taeng.service.threading.fork_join.ForkJoinExampleService;
@@ -33,6 +34,8 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 	JoinExampleService joinExampleService;
 	@Autowired
 	FutureExampleService futureExampleService;
+	@Autowired
+	ServerExampleService serverExampleService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavaExmaplesApplication.class, args);
@@ -58,8 +61,9 @@ public class JavaExmaplesApplication implements CommandLineRunner {
 		// forkJoinExampleService.recusiveTaskExampleMain();
 
 		/* Future + Excutor 예제 */
-		futureExampleService.futureExampleMain(10, 10);
-
+		// futureExampleService.futureExampleMain(10, 10);
+		/* NIO Chat Server 예제 */
+		serverExampleService.ServiceMain();
 		LOGGER.info("Main Thread Ended");
 
 	}
