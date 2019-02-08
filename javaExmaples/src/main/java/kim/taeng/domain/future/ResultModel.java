@@ -1,4 +1,4 @@
-package kim.taeng.model.future;
+package kim.taeng.domain.future;
 
 import lombok.Data;
 

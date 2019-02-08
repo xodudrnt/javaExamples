@@ -10,7 +10,7 @@ import java.util.concurrent.Future;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import kim.taeng.model.future.ResultModel;
+import kim.taeng.domain.future.ResultModel;
 
 @Service
 public class FutureExampleService {

@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 
 import org.apache.log4j.Logger;
 
-import kim.taeng.model.future.ResultModel;
+import kim.taeng.domain.future.ResultModel;
 import kim.taeng.utils.Commons;
 
 public class FutureTask implements Callable {
